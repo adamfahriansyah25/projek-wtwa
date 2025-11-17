@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>ChessLearn - Kuasai Seni Bermain Catur</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    
+   
+    
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#FFC107",
+                        "accent": "#FFD54F",
+                        "background-light": "#F9F9F9",
+                        "background-dark": "#121212",
+                        "text-light": "#1A1A1A",
+                        "text-dark": "#EAEAEA",
+                        "text-muted-light": "#666666",
+                        "text-muted-dark": "#999999",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1E1E1E",
+                        "border-light": "#E0E0E0",
+                        "border-dark": "#2D2D2D",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+    <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="flex flex-1 justify-center py-5 md:px-10 lg:px-40">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-4 md:px-10 py-3">
+                        <div class="flex items-center gap-4">
+                            <div class="size-6 text-primary dark:text-accent">
+                                <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_6_535)">
+                                        <path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_6_535">
+                                            <rect fill="white" height="48" width="48"></rect>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] text-primary dark:text-accent">ChessLearn</h2>
+                        </div>
+                        <div class="flex flex-1 justify-end gap-2">
+                            <a href="register.php" class="btn-primary flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-transparent border border-primary dark:border-accent text-primary dark:text-accent text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/10 dark:hover:bg-accent/10 transition-all duration-300 transform hover:scale-105">
+                                <span class="truncate">Daftar</span>
+                            </a>
+                            <a href="login.php" class="btn-primary flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary dark:bg-accent text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-all duration-300 transform hover:scale-105">
+                                <span class="truncate">Login</span>
+                            </a>
+                        </div>
+                    </header>
+                    
+                    <main class="flex flex-col gap-10 md:gap-16">
+                        <div class="@container">
+                            <div class="@[480px]:p-4">
+                                <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center p-4 text-center" style='background-image: linear-gradient(rgba(18, 18, 18, 0.4) 0%, rgba(18, 18, 18, 0.7) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAAQlhmgq4F7wJ1GUZqifFn_ImEZOYd_vcUaPNm-O-jYeBozKMVhHVvsDVzh6iZqia7F4Sdo1U6mHuPq4TRK_zhAqVSwUhTJG2pDkDW_22WxQOA8UiSXf3Jj0IfPnrz1JMcioW_A0AAXUjoczSIUrivSs-ppg83Yxipju8UU8cTfqOhIJ1ohZ_wS1QFX6he2ppk67zt7XQ2sME5H78pdbDfr8It5qBnmirFhmE50ujUpsFAtRNy6a5qSCkEBXuqKfCzo36dupVD3fc");'>
+                                    <div class="flex flex-col gap-2 transition-all duration-500 hover:scale-105 animate-fade-in-up">
+                                        <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl drop-shadow-lg">Kuasai Seni Bermain <span class="text-accent">Catur</span></h1>
+                                        <h2 class="text-gray-200 text-sm font-normal leading-normal @[480px]:text-base max-w-xl">Pelajari aturan dasar, kuasai strategi awal, dan bergabunglah dengan komunitas global kami untuk bermain.</h2>
+                                    </div>
+                                    <a href="register.php" class="btn-submit flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary dark:bg-accent text-background-dark text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base hover:opacity-90 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-primary/50 dark:hover:shadow-accent/50 animate-fade-in-up">
+                                        <span class="truncate">Mulai Bermain Sekarang</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col gap-10 px-4 py-10 @container">
+                            <div class="flex flex-col gap-4">
+                                <h2 class="text-primary dark:text-accent tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:tracking-[-0.033em] max-w-[720px]">Kenapa Catur?</h2>
+                                <p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-normal max-w-[720px]">Temukan manfaat bermain catur yang dapat meningkatkan kemampuan berpikir dan fokus Anda.</p>
+                            </div>
+                            <div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 p-0">
+                                <div class="interactive-element flex flex-1 gap-4 rounded-lg border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-4 flex-col animate-fade-in-up">
+                                    <span class="material-symbols-outlined text-primary dark:text-accent">neurology</span>
+                                    <div class="flex flex-col gap-1">
+                                        <h3 class="text-text-light dark:text-text-dark text-base font-bold leading-tight">Asah Logika</h3>
+                                        <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Latih kemampuan berpikir strategis dan pemecahan masalah Anda dalam setiap permainan.</p>
+                                    </div>
+                                </div>
+                                <div class="interactive-element flex flex-1 gap-4 rounded-lg border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-4 flex-col animate-fade-in-up">
+                                    <span class="material-symbols-outlined text-primary dark:text-accent">center_focus_strong</span>
+                                    <div class="flex flex-col gap-1">
+                                        <h3 class="text-text-light dark:text-text-dark text-base font-bold leading-tight">Tingkatkan Fokus</h3>
+                                        <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Tingkatkan konsentrasi dan perhatian terhadap detail dengan menganalisis langkah demi langkah.</p>
+                                    </div>
+                                </div>
+                                <div class="interactive-element flex flex-1 gap-4 rounded-lg border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-4 flex-col animate-fade-in-up">
+                                    <span class="material-symbols-outlined text-primary dark:text-accent">groups</span>
+                                    <div class="flex flex-col gap-1">
+                                        <h3 class="text-text-light dark:text-text-dark text-base font-bold leading-tight">Komunitas Global</h3>
+                                        <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Terhubung dan bertanding dengan para pemain catur dari seluruh dunia.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col gap-10 px-4 py-5 @container md:gap-16">
+                            <div class="flex flex-col gap-4 text-center items-center">
+                                <h2 class="text-primary dark:text-accent tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:tracking-[-0.033em] max-w-[720px]">Ukur Kemampuan Anda dengan Rating Elo</h2>
+                                <p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-normal max-w-[720px]">Sistem rating Elo adalah metode untuk menghitung tingkat keahlian relatif pemain dalam permainan catur. Ini adalah cerminan kekuatan bermain Anda saat ini.</p>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                                <div class="flex justify-center group">
+                                    <img alt="Illustration of a rising chart with a chess knight, symbolizing rating improvement." class="w-full max-w-sm h-auto object-contain transition-transform-gpu" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB94HgVTOMJ_V6Qg2XmzzuVbysjSBAQPdF0gxJ9Ju51EvK9l2FOConfcmo1QL7BopaixwwGVK2JTtMHl7oi14Ps3p8-X0vOljaEaIElLM257r2wJm-hXE6q7p-fc1tMD-p0QVnmr_5oJjtrRwF4Ec-0VFX8oQ1HwyQmFF1HwR8KCRBuvfLMg-R_HvkpymH-xc8siT4XXTsGlju6IyfYMt91skUYImfeYmo6tF-HmkTV2MDdCccuk-27ksYE5Hi4D9hZeDsUCwGmS6E"/>
+                                </div>
+                                <div class="flex flex-col gap-6">
+                                    <div class="flex items-start gap-4 transition-all duration-300 hover:bg-card-light dark:hover:bg-card-dark/50 p-2 rounded-lg animate-slide-in-right">
+                                        <span class="material-symbols-outlined text-primary dark:text-accent mt-1">trending_up</span>
+                                        <div class="flex flex-col gap-1">
+                                            <h3 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight">Bagaimana Cara Kerjanya?</h3>
+                                            <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Rating Anda akan naik saat Anda mengalahkan pemain dengan rating lebih tinggi, dan turun saat Anda kalah dari pemain dengan rating lebih rendah. Besarnya perubahan rating tergantung pada perbedaan rating antara Anda dan lawan Anda.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4 transition-all duration-300 hover:bg-card-light dark:hover:bg-card-dark/50 p-2 rounded-lg animate-slide-in-right">
+                                        <span class="material-symbols-outlined text-primary dark:text-accent mt-1">verified_user</span>
+                                        <div class="flex flex-col gap-1">
+                                            <h3 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight">Mengapa Ini Penting?</h3>
+                                            <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Rating Elo membantu memastikan Anda bermain melawan lawan dengan tingkat keahlian yang sebanding, menciptakan pertandingan yang lebih adil dan menantang. Ini juga menjadi cara yang bagus untuk melacak kemajuan Anda dari waktu ke waktu.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4 transition-all duration-300 hover:bg-card-light dark:hover:bg-card-dark/50 p-2 rounded-lg animate-slide-in-right">
+                                        <span class="material-symbols-outlined text-primary dark:text-accent mt-1">emoji_events</span>
+                                        <div class="flex flex-col gap-1">
+                                            <h3 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight">Tingkatkan Rating Anda</h3>
+                                            <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Teruslah belajar, berlatih, dan bermain untuk meningkatkan pemahaman strategi Anda dan melihat rating Elo Anda meningkat. Setiap permainan adalah kesempatan untuk menjadi pemain yang lebih baik.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col">
+                            <h2 class="text-primary dark:text-accent text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Pahami Permainan</h2>
+                            <div class="pb-3">
+                                <div class="flex border-b border-border-light dark:border-border-dark px-4 gap-8 overflow-x-auto">
+                                    <a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary dark:border-b-accent text-primary dark:text-accent pb-[13px] pt-4 whitespace-nowrap transition-all duration-300 transform hover:scale-105" href="#">
+                                        <p class="text-sm font-bold leading-normal tracking-[0.015em]">Raja</p>
+                                    </a>
+                                    <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-muted-light dark:text-text-muted-dark pb-[13px] pt-4 whitespace-nowrap hover:border-b-primary/50 dark:hover:border-b-accent/50 hover:text-primary dark:hover:text-accent transition-all duration-300 transform hover:scale-105" href="#">
+                                        <p class="text-sm font-bold leading-normal tracking-[0.015em]">Ratu</p>
+                                    </a>
+                                    <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-muted-light dark:text-text-muted-dark pb-[13px] pt-4 whitespace-nowrap hover:border-b-primary/50 dark:hover:border-b-accent/50 hover:text-primary dark:hover:text-accent transition-all duration-300 transform hover:scale-105" href="#">
+                                        <p class="text-sm font-bold leading-normal tracking-[0.015em]">Benteng</p>
+                                    </a>
+                                    <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-muted-light dark:text-text-muted-dark pb-[13px] pt-4 whitespace-nowrap hover:border-b-primary/50 dark:hover:border-b-accent/50 hover:text-primary dark:hover:text-accent transition-all duration-300 transform hover:scale-105" href="#">
+                                        <p class="text-sm font-bold leading-normal tracking-[0.015em]">Gajah</p>
+                                    </a>
+                                    <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-muted-light dark:text-text-muted-dark pb-[13px] pt-4 whitespace-nowrap hover:border-b-primary/50 dark:hover:border-b-accent/50 hover:text-primary dark:hover:text-accent transition-all duration-300 transform hover:scale-105" href="#">
+                                        <p class="text-sm font-bold leading-normal tracking-[0.015em]">Kuda</p>
+                                    </a>
+                                    <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-muted-light dark:text-text-muted-dark pb-[13px] pt-4 whitespace-nowrap hover:border-b-primary/50 dark:hover:border-b-accent/50 hover:text-primary dark:hover:text-accent transition-all duration-300 transform hover:scale-105" href="#">
+                                        <p class="text-sm font-bold leading-normal tracking-[0.015em]">Pion</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="p-4 md:p-6 flex flex-col md:flex-row gap-6 items-center bg-card-light dark:bg-card-dark rounded-b-lg">
+                                <img class="w-full md:w-1/3 h-auto object-cover rounded-lg aspect-square transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0hmSLF6dxP-PX9c_v96a2Hyw3bkWpB4QcDYriA6C9ZFoH8e4UhjvWfeJocXqjQ31f4agsQPsPR-ZDnZs8c0tRuX6gpQ8VG3gggQxPZ1Tpjqyo7O8ajB2VaHpyPf3v56dNhv1QM7ywiK9BvgwiF4TBR5SUGegrQX7Fqoah4I0PR56Rr2T0rcpKl802C8iDbNEjiBjlpSjq2UtZmfdTSUkYZ1AXLDo3LX-zt5e1jAdPb480vdrM0peRzFywDj-wQfj5p6ccllJI3CE"/>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2 text-primary dark:text-accent">Raja (King)</h3>
+                                    <p class="text-text-muted-light dark:text-text-muted-dark leading-relaxed">Raja adalah bidak terpenting dalam catur. Jika raja Anda diserang dan tidak bisa melarikan diri (skakmat), Anda kalah. Raja dapat bergerak satu kotak ke segala arah: horizontal, vertikal, atau diagonal. Raja juga dapat melakukan gerakan khusus yang disebut rokade sekali per permainan.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col gap-4 px-4 py-5">
+                            <h2 class="text-primary dark:text-accent text-[22px] font-bold leading-tight tracking-[-0.015em]">Langkah Pertama Anda</h2>
+                            <div class="flex flex-col divide-y divide-border-light dark:divide-border-dark border-y border-border-light dark:border-border-dark">
+                                <details class="group py-4" open="">
+                                    <summary class="flex cursor-pointer list-none items-center justify-between">
+                                        <h3 class="text-lg font-bold">Pengembangan Bidak (Opening)</h3>
+                                        <div class="relative size-5 transition-transform duration-300 group-open:rotate-180">
+                                            <span class="material-symbols-outlined">expand_more</span>
+                                        </div>
+                                    </summary>
+                                    <div class="overflow-hidden transition-all duration-500 ease-in-out max-h-[1000px] opacity-100 group-[&:not([open])]:max-h-0 group-[&:not([open])]:opacity-0">
+                                        <p class="mt-4 text-text-muted-light dark:text-text-muted-dark">Fase pembukaan adalah beberapa langkah pertama dalam permainan. Tujuannya adalah untuk mengembangkan bidak Anda (mengeluarkannya dari posisi awal), mengontrol pusat papan, dan menjaga raja Anda tetap aman. Pembukaan yang baik meletakkan dasar untuk strategi permainan tengah Anda.</p>
+                                    </div>
+                                </details>
+                                <details class="group py-4">
+                                    <summary class="flex cursor-pointer list-none items-center justify-between">
+                                        <h3 class="text-lg font-bold">Kontrol Pusat Papan</h3>
+                                        <div class="relative size-5 transition-transform duration-300 group-open:rotate-180">
+                                            <span class="material-symbols-outlined">expand_more</span>
+                                        </div>
+                                    </summary>
+                                    <div class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0 group-[[open]]:max-h-[1000px] group-[[open]]:opacity-100">
+                                        <p class="mt-4 text-text-muted-light dark:text-text-muted-dark">Mengontrol empat kotak di tengah papan (d4, e4, d5, e5) sangat penting. Bidak yang berada di tengah memiliki mobilitas lebih besar dan dapat menyerang lebih banyak area di papan. Gunakan pion dan bidak minor Anda untuk memperebutkan kontrol pusat sejak awal.</p>
+                                    </div>
+                                </details>
+                                <details class="group py-4">
+                                    <summary class="flex cursor-pointer list-none items-center justify-between">
+                                        <h3 class="text-lg font-bold">Keamanan Raja</h3>
+                                        <div class="relative size-5 transition-transform duration-300 group-open:rotate-180">
+                                            <span class="material-symbols-outlined">expand_more</span>
+                                        </div>
+                                    </summary>
+                                    <div class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0 group-[[open]]:max-h-[1000px] group-[[open]]:opacity-100">
+                                        <p class="mt-4 text-text-muted-light dark:text-text-muted-dark">Salah satu prioritas utama di awal permainan adalah memastikan raja Anda aman. Gerakan rokade adalah cara terbaik untuk melakukannya. Rokade memindahkan raja Anda ke sudut papan yang lebih aman di belakang barisan pion pelindung.</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                        
+                        <div class="card-hover bg-card-light dark:bg-card-dark rounded-lg p-8 mx-4 text-center flex flex-col items-center gap-4">
+                            <h2 class="text-2xl md:text-3xl font-bold text-primary dark:text-accent">Siap untuk Bermain?</h2>
+                            <p class="text-text-muted-light dark:text-text-muted-dark max-w-md">Bergabunglah dengan jutaan pemain di seluruh dunia. Daftar sekarang dan mulai perjalanan catur Anda hari ini.</p>
+                            <a href="login.php" class="btn-submit flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary dark:bg-accent text-background-dark text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-primary/50 dark:hover:shadow-accent/50">
+                                <span class="truncate">Login untuk Bermain</span>
+                            </a>
+                        </div>
+                    </main>
+                    
+                    <footer class="mt-16 border-t border-border-light dark:border-border-dark px-4 md:px-10 py-8">
+                        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                            <p class="text-sm text-text-muted-light dark:text-text-muted-dark">© 2024 ChessLearn. Seluruh hak cipta.</p>
+                            <div class="flex gap-6 text-sm">
+                                <a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-accent transition-colors" href="#">Tentang Kami</a>
+                                <a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-accent transition-colors" href="#">Kontak</a>
+                                <a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-accent transition-colors" href="#">Media Sosial</a>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
